@@ -1,4 +1,4 @@
-﻿znamespace musika;
+﻿namespace musika;
 
 public partial class App : Application
 {
