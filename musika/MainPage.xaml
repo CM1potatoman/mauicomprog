@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="musika.MainPage">
+             x:Class="musika.MainPage"
+             BackgroundColor="#181818">
 
     <VerticalStackLayout Padding="16"
-                         Spacing="12"
+                         Spacing="14"
                          VerticalOptions="Center">
 
+        <Label Text="Number Dialer"
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center" />
+
+        <Label Text="Enter a phone number below."
+               FontSize="14"
+               TextColor="#C6C6C6"
+               HorizontalOptions="Center" />
+
         <Entry x:Name="PhoneNum"
-               Placeholder="Enter phone number"
-               Keyboard="Telephone" />
+               Placeholder="e.g. 09171234567"
+               Keyboard="Telephone"
+               MaxLength="25"
+               ClearButtonVisibility="WhileEditing"
+               BackgroundColor="White"
+               TextColor="#181818"
+               PlaceholderColor="#777777" />
 
         <Button x:Name="DialBtn"
                 Text="Dial"
-                Clicked="OnDial" />
+                Clicked="OnDial"
+                BackgroundColor="#C76D36"
+                TextColor="White"
+                HeightRequest="50"
+                CornerRadius="10" />
+
+        <Label Text="Opens the phone dialer. It does not call automatically."
+               FontSize="12"
+               TextColor="#AAAAAA"
+               HorizontalTextAlignment="Center" />
 
     </VerticalStackLayout>
-
 </ContentPage>
