@@ -37,11 +37,11 @@ jobs:
         run: rm -rf musika/musika musika/obj musika/bin
 
       - name: Build APK
-        run: dotnet build musika/musika.csproj -f net9.0-android -c Debug -p:TargetFrameworks=net9.0-android -p:AndroidPackageFormat=apk
+        run: dotnet build musika/musika.csproj -f net9.0-android -c Debug -p:TargetFrameworks=net9.0-android -p:AndroidPackageFormat=apk -p:EmbedAssembliesIntoApk=true
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: musika-apk
-          path: musika/bin/Debug/net9.0-android/**/*.apk
+          path: musika/bin/Debug/net9.0-android/**/*-Signed.apk
           if-no-files-found: error
