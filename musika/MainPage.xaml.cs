@@ -1,6 +1,3 @@
-using Microsoft.Maui.ApplicationModel.Communication;
-using System.Text.RegularExpressions;
-
 namespace musika;
 
 public partial class MainPage : ContentPage
@@ -10,30 +7,33 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
-    private async void OnDial(object sender, EventArgs e)
+    private void OnVerticalStart(object sender, EventArgs e)
     {
-        try
-        {
-            var input = PhoneNum.Text?.Trim() ?? "";
+        target.VerticalOptions = LayoutOptions.Start;
+    }
 
-            if (!Regex.IsMatch(input, @"^\+?[0-9\s()\-]+$"))
-                throw new ArgumentException();
+    private void OnVerticalCenter(object sender, EventArgs e)
+    {
+        target.VerticalOptions = LayoutOptions.Center;
+    }
 
-            var number = new string(input.Where(c => char.IsDigit(c) || c == '+').ToArray());
-            var digitCount = number.Count(char.IsDigit);
+    private void OnVerticalEnd(object sender, EventArgs e)
+    {
+        target.VerticalOptions = LayoutOptions.End;
+    }
 
-            if (digitCount < 3 || digitCount > 15)
-                throw new ArgumentException();
+    private void OnHorizontalStart(object sender, EventArgs e)
+    {
+        target.HorizontalOptions = LayoutOptions.Start;
+    }
 
-            PhoneDialer.Open(number);
-        }
-        catch (ArgumentException)
-        {
-            await DisplayAlert("Invalid input", "Please enter a valid phone number", "OK");
-        }
-        catch (Exception)
-        {
-            await DisplayAlert("Dialer unavailable", "Unable to open your phone's dialer", "OK");
-        }
+    private void OnHorizontalCenter(object sender, EventArgs e)
+    {
+        target.HorizontalOptions = LayoutOptions.Center;
+    }
+
+    private void OnHorizontalEnd(object sender, EventArgs e)
+    {
+        target.HorizontalOptions = LayoutOptions.End;
     }
 }
