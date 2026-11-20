@@ -3,7 +3,7 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:musika"
        x:Class="musika.AppShell"
-       Title="MAUIApp4">
+       Title="MAUIApp3">
 
     <ShellContent Title="Home"
                   ContentTemplate="{DataTemplate local:MainPage}"

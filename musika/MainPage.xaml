@@ -3,43 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="musika.MainPage">
 
-    <Grid Padding="20"
-          RowSpacing="10"
-          RowDefinitions="Auto,Auto,*">
+    <VerticalStackLayout Padding="20"
+                         Spacing="15"
+                         VerticalOptions="Center">
 
-        <HorizontalStackLayout Grid.Row="0"
-                               Spacing="10"
-                               HorizontalOptions="Center">
+        <Label Text="Number Dialer"
+               FontSize="24"
+               HorizontalOptions="Center" />
 
-            <Label Text="Vertical"
-                   VerticalOptions="Center" />
+        <Entry x:Name="PhoneNum"
+               Placeholder="Enter phone number"
+               Keyboard="Telephone" />
 
-            <Button Text="Start" Clicked="OnVerticalStart" />
-            <Button Text="Center" Clicked="OnVerticalCenter" />
-            <Button Text="End" Clicked="OnVerticalEnd" />
+        <Button x:Name="DialBtn"
+                Text="Dial"
+                Clicked="OnDial" />
 
-        </HorizontalStackLayout>
-
-        <HorizontalStackLayout Grid.Row="1"
-                               Spacing="10"
-                               HorizontalOptions="Center">
-
-            <Label Text="Horizontal"
-                   VerticalOptions="Center" />
-
-            <Button Text="Start" Clicked="OnHorizontalStart" />
-            <Button Text="Center" Clicked="OnHorizontalCenter" />
-            <Button Text="End" Clicked="OnHorizontalEnd" />
-
-        </HorizontalStackLayout>
-
-        <Image x:Name="target"
-               Grid.Row="2"
-               Source="https://preview.redd.it/roland-library-of-ruina-vs-roland-fate-grand-order-v0-c3djyl736hqf1.jpg?width=235&amp;format=pjpg&amp;auto=webp&amp;s=3fc597797df31edccc846777e046637695fafb91"
-               HeightRequest="120"
-               WidthRequest="120"
-               VerticalOptions="Start"
-               HorizontalOptions="Start" />
-
-    </Grid>
+    </VerticalStackLayout>
 </ContentPage>
