@@ -1,6 +1,6 @@
 using Microsoft.Maui.ApplicationModel.Communication;
 
-namespace MAUIApp3;
+namespace musika;
 
 public partial class MainPage : ContentPage
 {
